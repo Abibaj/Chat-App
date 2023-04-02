@@ -1,5 +1,6 @@
 ///// THIRD-PARTY MODULES
-// const path = require('path');
+const path = require('path');
+// const ejs = require('ejs');
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
@@ -19,11 +20,15 @@ const globalErrorHandler = require('./controllers/errorController');
 // ROUTERS
 const userRouter = require('./routes/userRoutes');
 const chatRouter = require('./routes/chatRoutes');
+const viewRouter = require('./routes/viewRoutes');
 
 ////
 const app = express();
 
 // 1) GLOBAL MIDDLEWARES
+// Serving static files
+app.use(express.static(path.join(__dirname, 'build')));
+
 // Set security HTTP headers
 app.use(helmet());
 
@@ -80,6 +85,7 @@ app.use((req, res, next) => {
 // 3) ROUTES
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/chats', chatRouter);
+app.use('/chats', viewRouter);
 
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
