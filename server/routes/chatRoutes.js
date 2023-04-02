@@ -6,8 +6,10 @@ const router = express.Router();
 
 // Protect all routes after this middleware
 router.use(authController.protect);
+
 router.post('/new', chatController.createChat);
 router.route('/:id').get(chatController.getChat);
+router.route('/:id').delete(chatController.deleteChat);
 
 // router.route('/').get(chatController.getAllUsers);
 
