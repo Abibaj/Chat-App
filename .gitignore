@@ -3,3 +3,6 @@ node_modules
 .cache
 *.env
 config.env
+package-lock.json
+.prettierrc
+.eslintrc.json
