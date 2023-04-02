@@ -7,16 +7,29 @@ const chatSchema = new mongoose.Schema({
   },
   sender: {
     type: mongoose.Schema.ObjectId,
-    ref: 'User'
+    ref: 'User',
+    required: [true, 'There has to be a sender']
   },
   receiver: {
     type: mongoose.Schema.ObjectId,
-    ref: 'User'
+    ref: 'User',
+    required: [true, 'There has to be a receiver']
   },
   time: {
-    type: Date,
+    type: String,
     default: new Date(Date.now()).toLocaleTimeString()
   }
+});
+
+chatSchema.pre(/^find/, function(next) {
+  this.populate({
+    path: 'sender',
+    select: 'name'
+  }).populate({
+    path: 'receiver',
+    select: 'name'
+  });
+  next();
 });
 
 const Chat = mongoose.model('Chat', chatSchema);
