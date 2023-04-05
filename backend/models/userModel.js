@@ -4,14 +4,24 @@ const validator = require('validator');
 const bcrypt = require('bcryptjs');
 
 const userSchema = new mongoose.Schema({
-  name: { type: String, required: [true, 'Please tell us your name!'] },
+  name: {
+    type: String,
+    required: [true, 'Please tell us your name!']
+  },
   email: {
     type: String,
-    required: [true, 'Please provide your email'],
+    required: [true, 'Please provide your email!'],
     unique: true,
     lowercase: true,
-    validate: [validator.isEmail, 'Please provide a valid email']
+    validate: [validator.isEmail, 'Please provide a valid email!']
   },
+
+  displayName: { type: String },
+  avatar: { type: String, default: 'default-avatar.png' },
+  role: { type: String, enum: ['user', 'admin'], default: 'user' },
+  online: { type: Boolean, default: false },
+  friends: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
+
   password: {
     type: String,
     required: [true, 'Please provide a password'],
@@ -45,6 +55,13 @@ userSchema.methods.changedPasswordAfter = function(JWTTimestamp) {
   // False means NOT changed
   return false;
 };
+
+userSchema.pre('save', function(next) {
+  if (this.name.includes(' ')) {
+    this.displayName = this.name.split(' ')[0];
+  }
+  next();
+});
 
 userSchema.pre('save', async function(next) {
   // Only run this function if password was actually modified

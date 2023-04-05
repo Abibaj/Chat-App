@@ -5,6 +5,11 @@ const chatSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please type a message to send']
   },
+  messageType: {
+    type: String,
+    enum: ['text', 'image', 'video'],
+    default: 'text'
+  },
   sender: {
     type: mongoose.Schema.ObjectId,
     ref: 'User',
@@ -15,10 +20,26 @@ const chatSchema = new mongoose.Schema({
     ref: 'User',
     required: [true, 'There has to be a receiver']
   },
-  time: {
+  conversationID: {
+    type: String,
+    default: ''
+    // required: [true, 'A conversation ID is required']
+  },
+  timeStamp: {
     type: String,
     default: new Date(Date.now()).toLocaleTimeString()
-  }
+  },
+  messageStatus: {
+    type: String,
+    enum: ['sending', 'sent', 'delivered', 'read'],
+    default: 'sending'
+  },
+  metadata: { type: Object }
+});
+
+chatSchema.pre('save', function(next) {
+  this.conversationID = `${this.sender._id}_${this.receiver._id}`;
+  next();
 });
 
 chatSchema.pre(/^find/, function(next) {
