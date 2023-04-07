@@ -1,0 +1,40 @@
+@import '../../utils/variables.scss';
+@import '../../utils/mixins.scss';
+
+.search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0.2rem 1rem;
+
+  &-input {
+    width: 85%;
+    margin: 0.5rem auto;
+    border: 1px solid $text-color-grey--light;
+    border-radius: 10rem;
+    height: 3.5rem;
+    outline: none;
+    text-align: center;
+
+    &:focus {
+      outline: 1.5px solid $primary-color--darker;
+    }
+
+    ::placeholder {
+      // text-align: center;
+      display: inline-block;
+      padding-left: 1rem;
+      color: $text-color-grey--light;
+    }
+  }
+
+  &-label {
+    color: $text-color-grey;
+    display: flex;
+    font-size: 2.3rem;
+
+    @include icon-style(#eee);
+  }
+}
