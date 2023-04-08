@@ -3,10 +3,20 @@
 
 .message-card {
   height: 6rem;
-  // max-width: 100%;
 
   display: flex;
   flex-direction: row;
+  cursor: pointer;
+
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: #e8f1fc8e;
+  }
+
+  &:active {
+    border-left: 3px solid $primary-color;
+  }
 
   &__profile-photo {
     padding: 0.5rem;

@@ -16,14 +16,14 @@
     border-radius: 10rem;
     height: 3.5rem;
     outline: none;
-    text-align: center;
+    padding-left: 1rem;
 
     &:focus {
       outline: 1.5px solid $primary-color--darker;
     }
 
-    ::placeholder {
-      // text-align: center;
+    &::placeholder {
+      text-align: center;
       display: inline-block;
       padding-left: 1rem;
       color: $text-color-grey--light;
