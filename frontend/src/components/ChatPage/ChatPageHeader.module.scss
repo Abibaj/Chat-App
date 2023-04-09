@@ -1,0 +1,37 @@
+@import '../../utils/mixins.scss';
+@import '../../utils/variables.scss';
+
+.chat-header {
+  background-color: #ededed57;
+  height: 10%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &__display-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+
+    margin-left: 1rem;
+  }
+
+  &__profile-photo {
+    @include profile-photo-style;
+  }
+
+  &__name {
+    margin-left: 0.8rem;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: $text-color-grey;
+  }
+
+  &__friend-info {
+    @include icon-style(#eee);
+    margin-right: 1rem;
+  }
+}

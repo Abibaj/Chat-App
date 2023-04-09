@@ -15,9 +15,27 @@
   margin-left: 0.5rem;
   border-radius: 10rem;
 
+  cursor: pointer;
+
   transition: all 0.3s;
 
   &:hover {
     background-color: $color;
+  }
+}
+
+@mixin profile-photo-style {
+  padding: 0.5rem;
+  width: 5.5rem;
+  height: auto;
+
+  img {
+    margin: auto;
+    height: 5rem;
+    width: 5rem;
+    // border: 1px solid$color-black;
+    display: flex;
+    border-radius: 5rem;
+    cursor: pointer;
   }
 }
