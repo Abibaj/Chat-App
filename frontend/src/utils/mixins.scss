@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 @mixin overflow-ellipsis {
   white-space: nowrap;
   overflow: hidden;
@@ -37,5 +39,29 @@
     display: flex;
     border-radius: 5rem;
     cursor: pointer;
+  }
+}
+
+@mixin scrollbar {
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
+    background-color: red;
+    visibility: hidden;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+    background-color: $color-white;
+    border-radius: 5rem;
+    padding-left: 0.3rem;
+    visibility: hidden;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5rem;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: $text-color-grey--light;
+    // visibility: hidden;
   }
 }

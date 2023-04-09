@@ -1,7 +1,71 @@
 @import '../../utils/mixins.scss';
 @import '../../utils/variables.scss';
 
+@mixin input-bar-emoji-style {
+  @include icon-style(#eee);
+  color: $primary-color;
+  font-size: 2rem;
+  width: 3rem;
+}
+
 .input-tab {
-  background-color: $text-color-grey--light;
-  height: 7.5%;
+  background-color: #ededed57;
+  height: 6rem;
+  // max-height: 10rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+
+  &__image-emoji {
+    @include input-bar-emoji-style;
+  }
+
+  &__gif-emoji {
+    @include input-bar-emoji-style;
+  }
+
+  &__emoji-emoji {
+    @include input-bar-emoji-style;
+  }
+
+  &__input-field {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: $text-color-grey;
+    background-color: #ededed57;
+    font-family: 'Lato', sans-serif;
+
+    box-sizing: border-box;
+    resize: none;
+    width: 44rem;
+    // min-height: auto;
+    height: 90%;
+
+    padding: 1rem 2rem;
+    margin: 0.5rem 0rem 0.5rem 1rem;
+
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+
+    flex-grow: 1;
+    white-space: normal;
+
+    @include scrollbar;
+
+    &::placeholder {
+      font-size: 1.5rem;
+      vertical-align: center;
+
+      // padding-left: 1rem;
+    }
+  }
+
+  &__input-label {
+    @include icon-style(#eee);
+    color: $primary-color;
+    margin-right: 1rem;
+  }
 }
