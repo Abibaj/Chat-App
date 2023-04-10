@@ -13,9 +13,7 @@
   height: 6rem;
   // max-height: 10rem;
 
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  @include flex-row-center-center;
   justify-content: space-evenly;
 
   &__image-emoji {
@@ -58,8 +56,6 @@
     &::placeholder {
       font-size: 1.5rem;
       vertical-align: center;
-
-      // padding-left: 1rem;
     }
   }
 

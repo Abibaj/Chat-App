@@ -11,7 +11,10 @@ const LoginOverlay = props => {
     <Modal onClose={props.onHideModal}>
       <div className={classes['login']}>
         <div className={classes['login__close-bar']}>
-          <span className={classes['login__close-button']}>
+          <span
+            onClick={props.onHideModal}
+            className={classes['login__close-button']}
+          >
             <IoClose />
           </span>
           <span className={classes['login__app-logo']}>
@@ -63,7 +66,7 @@ const LoginOverlay = props => {
             max: '16'
           }}
         /> */}
-        <Button>
+        <Button onClick={props.onHideModal}>
           <span className={classes['signup-btn']}>Sign in</span>
         </Button>
         <div className={classes['sign-in-cta']}>

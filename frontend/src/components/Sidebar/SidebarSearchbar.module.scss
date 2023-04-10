@@ -2,10 +2,7 @@
 @import '../../utils/mixins.scss';
 
 .search {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  @include flex-row-sb-center;
 
   padding: 0.2rem 1rem;
 

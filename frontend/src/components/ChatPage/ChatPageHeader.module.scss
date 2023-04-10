@@ -5,15 +5,10 @@
   background-color: #ededed57;
   height: 10%;
 
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  @include flex-row-sb-center;
 
   &__display-info {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    @include flex-row-center-center;
     justify-content: start;
 
     margin-left: 1rem;
