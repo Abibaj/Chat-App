@@ -1,0 +1,9 @@
+@import '../../utils/mixins.scss';
+
+.input {
+  @include input;
+}
+
+.signup-btn {
+  width: 10rem;
+}

@@ -93,3 +93,9 @@
   justify-content: space-between;
   align-items: center;
 }
+
+@mixin input {
+  height: 3rem;
+  width: 10rem;
+  outline: none;
+}

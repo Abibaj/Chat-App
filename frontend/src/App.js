@@ -19,9 +19,10 @@ function App() {
   const hideModalHandler = () => {
     setmodalIsShown(!isLoggedIn);
   };
-  const showModalHandler = () => {
-    setmodalIsShown(isLoggedIn);
-  };
+
+  // const showModalHandler = () => {
+  //   setmodalIsShown(isLoggedIn);
+  // };
 
   return (
     <div className={classes.App}>
