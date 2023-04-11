@@ -27,7 +27,7 @@ const ChatPageInputTab = () => {
         placeholder="Type a message"
         id="message"
       />
-      <label for="message" className={classes['input-tab__input-label']}>
+      <label htmlFor="message" className={classes['input-tab__input-label']}>
         <IoPaperPlaneOutline />{' '}
       </label>
     </div>

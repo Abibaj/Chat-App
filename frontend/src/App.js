@@ -14,7 +14,7 @@ function App() {
 
   setTimeout(() => {
     setInitialPageIsShown(false);
-  }, 1 * 1000);
+  }, 1.5 * 1000);
 
   const hideModalHandler = () => {
     setmodalIsShown(!isLoggedIn);

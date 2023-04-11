@@ -2,7 +2,7 @@ import React from 'react';
 
 import Modal from '../UI/Modal/Modal';
 import LoginHeader from './LoginHeader';
-import SignupInput from './SignupInput';
+// import SignupInput from './SignupInput';
 import LoginInput from './LoginInput';
 import classes from './LoginOverlay.module.scss';
 
