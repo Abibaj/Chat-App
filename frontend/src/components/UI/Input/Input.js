@@ -4,12 +4,19 @@ import classes from './Input.module.scss';
 
 const Input = forwardRef((props, ref) => {
   return (
-    <div>
+    <div
+      className={`${classes.control} ${
+        props.isValid === false ? classes.invalid : ''
+      }`}
+    >
       <input
-        className={classes.input}
+        // className={classes.input}
         placeholder={props.placeholder}
-        ref={ref}
-        {...props.input}
+        type={props.type}
+        id={props.id}
+        value={props.value}
+        onChange={props.onChange}
+        onBlur={props.onBlur}
       />
     </div>
   );

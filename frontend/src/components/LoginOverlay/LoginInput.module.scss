@@ -16,3 +16,7 @@
     text-decoration: none;
   }
 }
+
+.login-form {
+  @include flex-column-center-center;
+}
