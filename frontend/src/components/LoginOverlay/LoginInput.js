@@ -110,7 +110,7 @@ const LoginInput = props => {
           onChange={passwordChangeHandler}
           onBlur={validatePasswordHandler}
         />
-        <Button type="submit" onClick={props.onClick}>
+        <Button type="submit" onClick={props.onClick} disabled={!formIsValid}>
           <span className={classes['signin-btn']}>Sign in</span>
         </Button>
       </form>
