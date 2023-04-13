@@ -1,0 +1,66 @@
+@import '../../utils/mixins.scss';
+@import '../../utils/variables.scss';
+
+@mixin chat {
+  margin: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+@mixin text-content($background-color, $align) {
+  display: inline-block;
+  width: fit-content;
+  max-width: 60%;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  height: fit-content;
+
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.3rem;
+
+  border-radius: 2rem;
+  background-color: $background-color;
+  color: $color-white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: $align;
+  align-items: start;
+}
+
+@mixin time-stamp($flex) {
+  color: $text-color-grey;
+  font-size: 1rem;
+  align-self: $flex;
+}
+
+.chat-received {
+  @include chat;
+
+  .text-content {
+    @include text-content(#42f256, left);
+
+    align-self: flex-start;
+    border-bottom-left-radius: 0rem;
+  }
+
+  .time-stamp {
+    @include time-stamp(flex-start);
+  }
+}
+
+.chat-sent {
+  @include chat;
+
+  .text-content {
+    @include text-content($primary-color, right);
+
+    align-self: flex-end;
+    border-bottom-right-radius: 0rem;
+  }
+
+  .time-stamp {
+    @include time-stamp(flex-end);
+  }
+}
