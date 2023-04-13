@@ -1,0 +1,69 @@
+@import '../../utils/variables.scss';
+@import '../../utils/mixins.scss';
+
+.message-card {
+  height: 7rem;
+  padding: 0.5rem 0.7rem;
+  border-bottom: 1px solid #eee;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: #e8f1fc8e;
+  }
+
+  &:active {
+    border-left: 3px solid $primary-color;
+  }
+
+  &__profile-photo {
+    @include profile-photo-style;
+
+    margin-right: 0.7rem;
+  }
+
+  &__container {
+    padding: 0.5rem;
+    width: 82%;
+  }
+
+  &__sender-info {
+    @include overflow-ellipsis;
+  }
+
+  &__display-name {
+    font-weight: 500;
+    color: $text-color-black;
+
+    @include overflow-ellipsis;
+  }
+
+  &__username {
+    font-size: 1.3rem;
+    color: $text-color-grey;
+
+    @include overflow-ellipsis;
+  }
+
+  &__timestamp {
+    font-size: 1.3rem;
+    color: $text-color-grey;
+  }
+
+  &__message-snippet {
+    color: $text-color-grey;
+    width: 100%;
+    height: 2rem;
+    font-size: 1.3rem;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

@@ -10,7 +10,7 @@ const ChatPageHeader = () => {
         <span className={classes['chat-header__profile-photo']}>
           <img src="../../resources/user-1.jpg" alt="user-1" />
         </span>
-        <span className={classes['chat-header__name']}>Habeebah</span>
+        <span className={classes['chat-header__name']}>Sweet</span>
       </div>
       <span className={classes['chat-header__friend-info']}>
         <IoInformationCircleOutline />

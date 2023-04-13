@@ -28,7 +28,7 @@ const ChatPageInputTab = () => {
         id="message"
       />
       <label htmlFor="message" className={classes['input-tab__input-label']}>
-        <IoPaperPlaneOutline />{' '}
+        <IoPaperPlaneOutline />
       </label>
     </div>
   );

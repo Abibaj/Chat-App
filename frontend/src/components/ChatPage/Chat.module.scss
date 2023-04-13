@@ -39,10 +39,11 @@
   @include chat;
 
   .text-content {
-    @include text-content(#42f256, left);
+    @include text-content(#f4f4f4, left);
+    color: $text-color-grey;
 
     align-self: flex-start;
-    border-bottom-left-radius: 0rem;
+    border-bottom-left-radius: 0.5rem;
   }
 
   .time-stamp {
@@ -57,7 +58,7 @@
     @include text-content($primary-color, right);
 
     align-self: flex-end;
-    border-bottom-right-radius: 0rem;
+    border-bottom-right-radius: 0.5rem;
   }
 
   .time-stamp {
